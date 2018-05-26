@@ -56,6 +56,23 @@
             });
         };
 
+        //Async Await
+        //Consuming promises
+
+        async function getRecipeAW(){
+            const IDs = await getIDs;
+            console.log(IDs);
+            const recipe = await getRecipe(IDs[2]);
+            console.log(recipe);
+            const related = await getPublisher("Adam");
+            console.log(related);
+
+            return recipe
+        };
+
+        getRecipeAW().then(result => console.log(`${result} is the best`));
+
+        /* Consuming Promises
         getIDs
         .then(IDs => {
             console.log(IDs);
@@ -69,7 +86,7 @@
             console.log(recipe);
         })
         .catch(error => console.log(error));
-
+        */
     </script>
 </body>
 </html>
